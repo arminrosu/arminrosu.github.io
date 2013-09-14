@@ -1,0 +1,68 @@
+<html>
+	<body>
+		<script type="text/javascript" src="http://platform.linkedin.com/in.js">
+			api_key: 1szm0ekxwbej
+			onLoad: onLinkedInLoad
+			authorize: true
+			scope: rw_nus
+		</script>
+		
+		
+		<p>This is an example and has no real use.</p>
+		
+		<!-- NOTE: be sure to set onLoad = onLinkedInLoad -->
+		<script type="text/javascript">
+		function onLinkedInLoad() {
+		  IN.Event.on(IN, "auth", function() {onLinkedInLogin();});
+		  IN.Event.on(IN, "logout", function() {onLinkedInLogout();});
+		}
+		
+		function onLinkedInLogout() {
+		  // do nothing
+		}
+		
+		function onLinkedInLogin() {
+			console.log(IN.User.getMemberId());
+			
+			IN.API.MemberUpdates(IN.User.getMemberId()).result(displayUpdates);
+		}
+		
+		function displayPublicUpdates() {
+			var userId = '5nFPnOoi3O';
+			
+			IN.API.MemberUpdates(userId).result(displayUpdates);
+			
+			//IN.API.Raw('/people/id=' + userId + '/network/updates').method('GET').result(displayUpdates);
+		}
+		
+		function displayUpdates( updates ) {
+			for( var i in updates.values) {
+				var update = updates.values[i];
+				if ( update.updateType == 'STAT') {
+					console.log(update.timestamp);
+					console.log(update.updateContent.person.currentStatus);
+					//console.log(update);
+				}				
+			}
+			
+			console.log(updates);
+		}
+		
+		function getStatus() {
+		  IN.API.Raw("/people/~/current-status").method("GET")
+		  .result(function(r) {
+		    alert("GET STATUS: "+r);
+		  })
+		  .error(function(r) {
+		    alert("GET FAIL");
+		  });
+		}
+		</script>
+		
+		
+				
+		<script type="IN/Login">
+		<p>Status API Test: <a href="#" id="statusAPI" onclick="getStatus()">Click Here</a></p>
+		</script>
+</body>
+</html>
