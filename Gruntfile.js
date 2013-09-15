@@ -40,6 +40,34 @@ module.exports = function(grunt) {
 
 	grunt.initConfig({
 		"pkg": pkg,
+		"ftp-deploy": {
+			"deploy": {
+				"auth": {
+					"host": "ftp.armin.ro",
+					"port": 21
+				},
+				"src": "./",
+				"dest": "public_html/www",
+				"exclusions": [
+					// folders
+					".git",
+					"images/lifestream",
+					"js/lib",
+					"js/src",
+					"less",
+					"node_modules",
+					"views",
+					// files
+					"**/.DS_Store",
+					".editorconfig",
+					".ftppass",
+					".gitignore",
+					".jshintrc",
+					"Gruntfile.js",
+					"package.json"
+				]
+			}
+		},
 		"htmlmin": {
 			"build": {
 				"options": {
@@ -124,6 +152,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-ftp-deploy');
 	grunt.loadNpmTasks('grunt-liquid');
 
 	// Register Tasks
