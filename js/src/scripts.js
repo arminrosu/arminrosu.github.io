@@ -38,7 +38,6 @@ $(function () {
 			"service": "twitter",
 			"user": "arminrosu"
 		},
-
 		{
 			"service": "vimeo",
 			"user": "arminsan"

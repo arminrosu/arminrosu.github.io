@@ -134,7 +134,10 @@ module.exports = function(grunt) {
 				"options": {
 					"interrupt": true
 				},
-				"files": ['js/src/*.js'],
+				"files": [
+					"js/lib/**/*.js",
+					"js/src/*.js"
+				],
 				"tasks": ['uglify']
 			},
 			"styles": {
@@ -157,5 +160,6 @@ module.exports = function(grunt) {
 
 	// Register Tasks
 	grunt.registerTask('build', ['less', 'uglify', 'liquid', 'htmlmin']);
+	grunt.registerTask('deploy', ['build', 'ftp-deploy']);
 	grunt.registerTask('default', ['less']);
 };
