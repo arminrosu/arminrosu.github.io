@@ -1,2 +1,5 @@
 .grunt
+css
+index.html
+js/scripts.min.js
 node_modules
