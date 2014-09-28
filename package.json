@@ -1,6 +1,11 @@
 {
   "name": "armin.ro",
   "author": "Armin Roșu",
+  "description": "My personal website",
+  "repository": {
+  		"type": "git",
+  		"url": "https://bitbucket.org/arminrosu/armin.ro.git"
+	},
   "version": "1.0.1",
   "devDependencies": {
     "grunt": "~0.4.1",
