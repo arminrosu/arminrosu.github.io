@@ -1,14 +1,14 @@
 /* globals module */
 
 module.exports = function(grunt) {
+	'use strict';
+
 	var pkg = grunt.file.readJSON('package.json');
 
-
-
-	var getStyles = function(){
+	var getStyles = function() {
 		var styles = [];
 
-		grunt.file.expand('css/*.css').forEach(function(style){
+		grunt.file.expand('css/*.css').forEach(function(style) {
 			styles.push(style + '?v=' + pkg.version);
 		});
 
@@ -20,7 +20,7 @@ module.exports = function(grunt) {
 
 		// compiled
 		var compiled = grunt.file.expand('js/*.js');
-		compiled.forEach(function(script){
+		compiled.forEach(function(script) {
 			scripts.push(script + '?v=' + pkg.version);
 		});
 
@@ -31,7 +31,7 @@ module.exports = function(grunt) {
 		var styles = getStyles(),
 			string = '';
 
-		styles.forEach(function(stylesheet){
+		styles.forEach(function(stylesheet) {
 			string += grunt.file.read(stylesheet);
 		});
 
@@ -39,113 +39,113 @@ module.exports = function(grunt) {
 	};
 
 	grunt.initConfig({
-		"pkg": pkg,
-		"ftp-deploy": {
-			"deploy": {
-				"auth": {
-					"host": "ftp.armin.ro",
-					"port": 21
+		pkg: pkg,
+		'ftp-deploy': {
+			deploy: {
+				auth: {
+					host: 'ftp.armin.ro',
+					port: 21
 				},
-				"src": "./",
-				"dest": "public_html/www",
-				"exclusions": [
+				src: './',
+				dest: 'public_html/www',
+				exclusions: [
 					// folders
-					".git",
-					"images/lifestream",
-					"js/lib",
-					"js/src",
-					"less",
-					"node_modules",
-					"views",
+					'.git',
+					'images/lifestream',
+					'js/lib',
+					'js/src',
+					'less',
+					'node_modules',
+					'views',
 					// files
-					"**/.DS_Store",
-					".editorconfig",
-					".ftppass",
-					".gitignore",
-					".jshintrc",
-					"Gruntfile.js",
-					"package.json"
+					'**/.DS_Store',
+					'.editorconfig',
+					'.ftppass',
+					'.gitignore',
+					'.jshintrc',
+					'Gruntfile.js',
+					'package.json'
 				]
 			}
 		},
-		"htmlmin": {
-			"build": {
-				"options": {
-					"collapseBooleanAttributes": true,
-					"collapseWhitespace": true,
-					"removeComments": true,
-					"removeEmptyAttributes": true,
-					"removeRedundantAttributes": true
+		htmlmin: {
+			build: {
+				options: {
+					collapseBooleanAttributes: true,
+					collapseWhitespace: true,
+					removeComments: true,
+					removeEmptyAttributes: true,
+					removeRedundantAttributes: true
 				},
-				"files": {
-					"index.html": "index.html"
+				files: {
+					'index.html': 'index.html'
 				}
 			}
 		},
-		"less": {
-			"build": {
-				"options": {
-					"report": "min",
-					"yuicompress": true
+		less: {
+			build: {
+				options: {
+					report: 'min',
+					yuicompress: true
 				},
-				"files": {
-					"css/styles.css": "less/styles.less"
+				files: {
+					'css/styles.css': 'less/styles.less'
 				}
 			}
 		},
-		"liquid": {
-			"build": {
-				"options": {
-					"scripts": getScripts(),
-					"styles": getStyles(),
-					// "css": getCSS()
+		liquid: {
+			build: {
+				options: {
+					scripts: getScripts(),
+					styles: getStyles(),
+				// css: getCSS()
 				},
 
-				"files": {
-					"index.html": "views/index.liquid"
+				files: {
+					'index.html': 'views/index.liquid'
 				}
 			}
 		},
-		"uglify": {
-			"build": {
-				"options": {
-					"compress": true,
-					"mangle": {
-						"except": ["jQuery"]
+		uglify: {
+			build: {
+				options: {
+					compress: true,
+					mangle: {
+						except: ['jQuery']
 					},
-					"preserveComments": false,
-					"report": "min",
-					"unsafe": true
+					preserveComments: false,
+					report: 'min',
+					unsafe: true
 				},
-				"files": {
-					"js/scripts.min.js": [
-						"js/lib/jquery.tmpl.js",
-						"js/lib/jquery.timeago.js",
-						"js/lib/jquery.lifestream/*.js",
-						"js/lib/jquery.lifestream/services/*.js",
-						"js/src/polyfills.js",
-						"js/src/scripts.js"
+				files: {
+					'js/scripts.min.js': [
+						'js/lib/jquery.tmpl.js',
+						'js/lib/jquery.timeago.js',
+						'js/lib/jquery.lifestream/*.js',
+						'js/lib/jquery.lifestream/services/*.js',
+						'js/src/polyfills.js',
+						'js/src/scripts.js'
 					]
 				}
 			}
 		},
-		"watch": {
-			"scripts": {
-				"options": {
-					"interrupt": true
+		watch: {
+			scripts: {
+				options: {
+					interrupt: true
 				},
-				"files": [
-					"js/lib/**/*.js",
-					"js/src/*.js"
+				files: [
+					'js/lib/**/*.js',
+					'js/src/*.js'
 				],
-				"tasks": ['uglify']
+				tasks: ['uglify']
 			},
-			"styles": {
-				"options": {
-					"interrupt": true
+			styles: {
+				options: {
+					interrupt: true
 				},
-				"files": ['less/*.less', 'less/*/*.less'],
-				"tasks": ['less']
+				files: ['less/*.less', 'less/*/*.less'],
+				tasks: ['less']
 			}
 		}
 	});
