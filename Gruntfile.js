@@ -9,7 +9,7 @@ module.exports = function(grunt) {
 		var styles = [];
 
 		grunt.file.expand('css/*.css').forEach(function(style) {
-			styles.push(style + '?v=' + pkg.version);
+			styles.push(style);
 		});
 
 		return styles;
@@ -82,7 +82,7 @@ module.exports = function(grunt) {
 			build: {
 				options: {
 					styles: getStyles(),
-				// css: getCSS()
+					css: getCSS()
 				},
 
 				files: {
@@ -111,7 +111,11 @@ module.exports = function(grunt) {
 					'less/*.less',
 					'less/*/*.less'
 				],
-				tasks: ['less']
+				tasks: [
+					'less',
+					'liquid',
+					'htmlmin'
+				]
 			}
 		}
 	});
