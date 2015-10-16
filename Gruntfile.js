@@ -15,18 +15,6 @@ module.exports = function(grunt) {
 		return styles;
 	};
 
-	var getScripts = function() {
-		var scripts = [];
-
-		// compiled
-		var compiled = grunt.file.expand('js/*.js');
-		compiled.forEach(function(script) {
-			scripts.push(script + '?v=' + pkg.version);
-		});
-
-		return scripts;
-	};
-
 	var getCSS = function() {
 		var styles = getStyles(),
 			string = '';
@@ -51,9 +39,6 @@ module.exports = function(grunt) {
 				exclusions: [
 					// folders
 					'.git',
-					'images/lifestream',
-					'js/lib',
-					'js/src',
 					'less',
 					'node_modules',
 					'views',
@@ -96,36 +81,12 @@ module.exports = function(grunt) {
 		liquid: {
 			build: {
 				options: {
-					scripts: getScripts(),
 					styles: getStyles(),
 				// css: getCSS()
 				},
 
 				files: {
 					'index.html': 'views/index.liquid'
-				}
-			}
-		},
-		uglify: {
-			build: {
-				options: {
-					compress: true,
-					mangle: {
-						except: ['jQuery']
-					},
-					preserveComments: false,
-					report: 'min',
-					unsafe: true
-				},
-				files: {
-					'js/scripts.min.js': [
-						'js/lib/jquery.tmpl.js',
-						'js/lib/jquery.timeago.js',
-						'js/lib/jquery.lifestream/*.js',
-						'js/lib/jquery.lifestream/services/*.js',
-						'js/src/polyfills.js',
-						'js/src/scripts.js'
-					]
 				}
 			}
 		},
@@ -158,13 +119,12 @@ module.exports = function(grunt) {
 	// Load Plugins
 	grunt.loadNpmTasks('grunt-contrib-htmlmin');
 	grunt.loadNpmTasks('grunt-contrib-less');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-ftp-deploy');
 	grunt.loadNpmTasks('grunt-liquid');
 
 	// Register Tasks
-	grunt.registerTask('build', ['less', 'uglify', 'liquid', 'htmlmin']);
+	grunt.registerTask('build', ['less', 'liquid', 'htmlmin']);
 	grunt.registerTask('deploy', ['build', 'ftp-deploy']);
 	grunt.registerTask('default', ['less']);
 };
