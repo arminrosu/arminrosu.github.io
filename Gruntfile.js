@@ -39,6 +39,7 @@ module.exports = function(grunt) {
 				exclusions: [
 					// folders
 					'.git',
+					'css',
 					'less',
 					'node_modules',
 					'views',
@@ -58,7 +59,6 @@ module.exports = function(grunt) {
 				options: {
 					collapseBooleanAttributes: true,
 					collapseWhitespace: true,
-					removeComments: true,
 					removeEmptyAttributes: true,
 					removeRedundantAttributes: true
 				},
@@ -81,7 +81,6 @@ module.exports = function(grunt) {
 		liquid: {
 			build: {
 				options: {
-					styles: getStyles(),
 					css: getCSS()
 				},
 

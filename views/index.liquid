@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- Aren't you the curious type. Good for you! --><!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -12,12 +12,6 @@
 		<meta name="twitter:site" content="@arminrosu"/>
 		<meta name="twitter:domain" content="Armin.ro"/>
 		<meta name="twitter:creator" content="@arminrosu"/>
-
-		{% if styles|size %}
-		{% for style in styles %}
-		<link rel="stylesheet" type="text/css" href="{{style}}" />
-		{% endfor %}
-		{% endif %}
 
 		{% if css|size %}
 		<style>
@@ -45,16 +39,19 @@
 		</script>
 
 	<body>
-		<h1>Armin Roșu</h1>
+		<!-- This element is here for better scroll performance on mobile, as opposed to having the borders made from position:fixed pseudo-elements.  -->
+		<div class="content">
+			<h1>Armin Roșu</h1>
 
-		<p>Started coding in 2003 to impress a girl.</p>
+			<p>Started coding in 2003 to impress a girl.</p>
 
-		<p>A year later I joined a small web development studio (Intelligent Solutions Group), where I had a wonderfully crazy time honing my skills, learning about design and the benefits of being a Renaissance Man.</p>
+			<p>A year later I joined a small web development studio (Intelligent Solutions Group), where I had a wonderfully crazy time honing my skills, learning about design and the benefits of being a Renaissance Man.</p>
 
-		<p>In late 2010 <a href="http://www.friendsadvertising.eu/" title="Friends Advertising Agency">Friends Advertising</a> grabbed me as their digital go-to guy. A couple of years later <a href="http://catalystww.com/" title="Catalyst Worldwide">Catalyst Worldwide</a> snatched me away. Soon thereafter we split off into <a href="http://kalon.ro">Kalon</a>, where I was heading the Frontend Development Department until the fall of 2015, when I left.</p>
+			<p>In late 2010 <a href="http://www.friendsadvertising.eu/" title="Friends Advertising Agency">Friends Advertising</a> grabbed me as their digital go-to guy. A couple of years later <a href="http://catalystww.com/" title="Catalyst Worldwide">Catalyst Worldwide</a> snatched me away. Soon thereafter we split off into <a href="http://kalon.ro">Kalon</a>, where I was heading the Frontend Development Department until the fall of 2015, when I left.</p>
 
-		<p>Meanwhile, I speak 4+ languages, fund <a href="https://www.kickstarter.com/projects/michaellaine/space-elevator-science-climb-to-the-sky-a-tethered" target="_blank" rel="nofollow">space travel</a>, am a Baron of the <a href="http://www.sealandgov.org/" target="_blank" rel="nofollow">Principality of Sealand</a>, been featured in <a href="http://www.forbes.ro/articles/portret-de-trendsetter-armin-rosu_0_9205-9658" target="_blank" rel="nofollow">Forbes</a> and Men's Health, enjoy a good meal.</p>
+			<p>Meanwhile, I speak 4+ languages, fund <a href="https://www.kickstarter.com/projects/michaellaine/space-elevator-science-climb-to-the-sky-a-tethered" target="_blank" rel="nofollow">space travel</a>, am a Baron of the <a href="http://www.sealandgov.org/" target="_blank" rel="nofollow">Principality of Sealand</a>, been featured in <a href="http://www.forbes.ro/articles/portret-de-trendsetter-armin-rosu_0_9205-9658" target="_blank" rel="nofollow">Forbes</a> and Men's Health, enjoy a good meal.</p>
 
-		<p>Ping me on <a href="http://www.linkedin.com/in/arminrosu" title="My public LinkedIn profile">LinkedIn</a>, <a href="http://github.com/arminrosu" title="My Github profile">Github</a> or <a href="https://www.facebook.com/armin.rosu" title="My Facebook">Facebook</a>, whichever suits you best.</p>
+			<p>Ping me on <a href="http://www.linkedin.com/in/arminrosu" title="My public LinkedIn profile">LinkedIn</a>, <a href="http://github.com/arminrosu" title="My Github profile">Github</a> or <a href="https://www.facebook.com/armin.rosu" title="My Facebook">Facebook</a>, whichever suits you best.</p>
+		</div>
 	</body>
 </html>

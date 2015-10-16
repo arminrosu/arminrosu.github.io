@@ -6,7 +6,7 @@
   		"type": "git",
   		"url": "https://bitbucket.org/arminrosu/armin.ro.git"
 	},
-  "version": "1.0.1",
+  "version": "1.2.0",
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-htmlmin": "~0.1.3",
