@@ -130,21 +130,26 @@ module.exports = function(grunt) {
 			}
 		},
 		watch: {
-			scripts: {
+			html: {
 				options: {
 					interrupt: true
 				},
 				files: [
-					'js/lib/**/*.js',
-					'js/src/*.js'
+					'views/*.liquid'
 				],
-				tasks: ['uglify']
+				tasks: [
+					'liquid',
+					'htmlmin'
+				]
 			},
 			styles: {
 				options: {
 					interrupt: true
 				},
-				files: ['less/*.less', 'less/*/*.less'],
+				files: [
+					'less/*.less',
+					'less/*/*.less'
+				],
 				tasks: ['less']
 			}
 		}
