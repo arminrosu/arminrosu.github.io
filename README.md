@@ -9,10 +9,8 @@ grunt build;
 
 ## Deploy
 
+Don't forget to build before commiting, for github.
+
 ```bash
-grunt deploy;
+grunt;
 ```
-
-## Links
-
-* [Forbes](http://www.forbes.ro/articles/portret-de-trendsetter-armin-rosu_0_9205-9658)

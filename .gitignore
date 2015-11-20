@@ -1,6 +1,13 @@
-.grunt
+# COMPILED FILES
+#
+# Github needs this
+# index.html
 css
-index.html
-js/scripts.min.js
+
+# DEPENDENCIES
+#
 node_modules
+
+# LOGS
+#
 npm-debug.log
