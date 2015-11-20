@@ -3,3 +3,4 @@ css
 index.html
 js/scripts.min.js
 node_modules
+npm-debug.log
