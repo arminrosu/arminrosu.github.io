@@ -34,6 +34,8 @@ module.exports = function(grunt) {
 				options: {
 					collapseBooleanAttributes: true,
 					collapseWhitespace: true,
+					minifyCSS: true,
+					minifyJS: true,
 					removeEmptyAttributes: true,
 					removeRedundantAttributes: true
 				},
