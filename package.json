@@ -10,7 +10,7 @@
     "build": "node build.js",
     "test": "standard && stylelint \"scss/styles.scss\""
   },
-  "version": "1.4.0",
+  "version": "1.4.1",
   "devDependencies": {
     "autoprefixer": "^6.5.3",
     "cssnano": "^3.8.2",
