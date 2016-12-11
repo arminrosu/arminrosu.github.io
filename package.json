@@ -3,17 +3,19 @@
   "author": "Armin Roșu",
   "description": "My personal website",
   "repository": {
-  		"type": "git",
-  		"url": "https://github.com/arminrosu/arminrosu.github.io"
-	},
-  "version": "1.2.0",
+    "type": "git",
+    "url": "https://github.com/arminrosu/arminrosu.github.io"
+  },
+  "scripts": {
+    "build": "node build.js"
+  },
+  "version": "1.4.0",
   "devDependencies": {
-    "grunt": "~1.0.1",
-    "grunt-contrib-htmlmin": "~2.0.0",
-    "grunt-contrib-less": "~1.4.0",
-    "grunt-contrib-watch": "~1.0.0",
-    "grunt-liquid": "2.0.1",
-    "q": "~1.4.1"
+    "autoprefixer": "^6.5.3",
+    "cssnano": "^3.8.2",
+    "html-minifier": "^3.2.3",
+    "node-sass": "^4.0.0",
+    "postcss": "^5.2.6"
   },
   "license": "MIT"
 }

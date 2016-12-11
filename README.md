@@ -1,16 +1,11 @@
 # Armin.ro
 
-## Develop
-
-```bash
-npm install;
-grunt build;
-```
+My personal website.
 
 ## Deploy
 
 Don't forget to build before commiting, for github.
 
 ```bash
-grunt;
+npm run build;
 ```
