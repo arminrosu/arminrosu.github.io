@@ -13,117 +13,13 @@ http://developer.yahoo.com/yui/license.html
 version: 3.3.0
 build: 3167
 */
-html {
-  background: $color-background;
-  color: #fff;
-}
 
 body,
 div,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
 h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td {
+p {
   margin: 0;
   padding: 0;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-fieldset,
-img {
-  border: 0;
-}
-
-address,
-caption,
-cite,
-code,
-dfn,
-em,
-strong,
-th,
-var {
-  font-style: normal;
-  font-weight: 400;
-}
-
-li {
-  list-style: none;
-}
-
-caption,
-th {
-  text-align: left;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: 100%;
-  font-weight: 400;
-}
-
-q:before,
-q:after {
-  content: '';
-}
-
-abbr,
-acronym {
-  border: 0;
-  font-variant: normal;
-}
-
-sup {
-  vertical-align: text-top;
-}
-
-sub {
-  vertical-align: text-bottom;
-}
-
-input,
-textarea,
-select {
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-}
-
-input,
-textarea,
-select {
-  *font-size: 100%;
-}
-
-legend {
-  color: #000;
 }
 
 /* RESET + */
@@ -131,20 +27,15 @@ html,
 body {
   height: 100%;
   width: 100%;
-
-  ::selection {
-    background: $color-background;
-    color: #000;
-  }
 }
 
 html {
   background: $color-background url(images/2016.07.jpg) fixed no-repeat 50% 100%;
   background-size: contain;
+  color: $color-main;
 }
 
 body {
-	color: #000;
   box-sizing: border-box;
   font-family: $font-body;
   font-size: 62.5%;
@@ -200,12 +91,5 @@ a {
 
   &:hover {
     border-bottom-style: solid;
-  }
-
-  &::selection {
-    background: #fff;
-    border-bottom-style: none;
-    color: $color-main;
-    text-shadow: none;
   }
 }
