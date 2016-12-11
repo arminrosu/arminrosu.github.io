@@ -10,6 +10,8 @@ var sass = require('node-sass')
  * @param  {string} css
  */
 var renderHtml = (css) => {
+  const banner = fs.readFileSync('html/_banner.html').toString().trim()
+
   const html = fs.readFileSync('html/index.html')
     .toString()
     .replace('<style />', '<style>' + css + '</style>')
@@ -23,7 +25,7 @@ var renderHtml = (css) => {
     removeRedundantAttributes: true
   })
 
-  fs.writeFileSync('index.html', minHtml)
+  fs.writeFileSync('index.html', banner + minHtml)
 }
 
 // Compile CSS
