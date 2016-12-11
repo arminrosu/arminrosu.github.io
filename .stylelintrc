@@ -12,7 +12,7 @@
     "font-weight-notation": "numeric",
     "indentation": 2,
     "length-zero-no-unit": true,
-    "max-empty-lines": 2,
+    "max-empty-lines": 1,
     "max-nesting-depth": 3,
     "no-extra-semicolons": true,
     "no-indistinguishable-colors": true,
