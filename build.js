@@ -10,7 +10,6 @@ var sass = require('node-sass')
  * @param  {string} css
  */
 var renderHtml = (css) => {
-
   const html = fs.readFileSync('html/index.html')
     .toString()
     .replace('<style />', '<style>' + css + '</style>')
