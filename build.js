@@ -3,7 +3,7 @@ const cssnano = require('cssnano')
 const fs = require('fs')
 const htmlmin = require('html-minifier').minify
 const postcss = require('postcss')
-const sass = require('node-sass')
+const sass = require('sass')
 
 /**
  * Compile HTML
