@@ -2,12 +2,8 @@
 
 # Armin.ro
 
-My personal website.
+My personal [website](https://armin.ro).
 
 ## Deploy
 
-Don't forget to build before commiting, for github.
-
-```bash
-npm run build;
-```
+Push a compiled html to master. Github handles the rest.
