@@ -1,4 +1,9 @@
 {
+  "plugins": [
+    "stylelint-no-indistinguishable-colors",
+    "stylelint-order",
+    "stylelint-selector-no-empty"
+  ],
   "rules": {
     "block-closing-brace-newline-before": "always",
     "block-opening-brace-newline-after": "always",
@@ -6,7 +11,6 @@
     "color-hex-case": "lower",
     "color-hex-length": "short",
     "declaration-block-no-duplicate-properties": true,
-    "declaration-block-properties-order": "alphabetical",
     "declaration-colon-space-after": "always",
     "font-family-no-duplicate-names": true,
     "font-weight-notation": "numeric",
@@ -15,10 +19,11 @@
     "max-empty-lines": 1,
     "max-nesting-depth": 3,
     "no-extra-semicolons": true,
-    "no-indistinguishable-colors": true,
     "number-leading-zero": "always",
+    "order/properties-alphabetical-order": true,
+    "plugin/stylelint-no-indistinguishable-colors": true,
+    "plugin/stylelint-selector-no-empty": true,
     "property-no-vendor-prefix": true,
-    "selector-no-empty": true,
     "shorthand-property-no-redundant-values": true,
     "string-quotes": "single",
     "value-list-comma-space-after": "always"

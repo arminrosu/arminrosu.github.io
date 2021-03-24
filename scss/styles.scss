@@ -87,6 +87,10 @@ h1 {
 }
 
 p {
+  @media only screen and (orientation: landscape) {
+    max-width: 360px;
+    text-align: right;
+  }
   clear: both;
   float: right;
   font-size: 1.6em;
@@ -95,10 +99,6 @@ p {
 
   &:last-of-type {
     margin: 0;
-  }
-  @media only screen and (orientation: landscape) {
-    max-width: 360px;
-    text-align: right;
   }
 }
 

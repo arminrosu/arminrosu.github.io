@@ -1,15 +1,15 @@
-var autoprefixer = require('autoprefixer')
-var cssnano = require('cssnano')
-var fs = require('fs')
-var htmlmin = require('html-minifier').minify
-var postcss = require('postcss')
-var sass = require('node-sass')
+const autoprefixer = require('autoprefixer')
+const cssnano = require('cssnano')
+const fs = require('fs')
+const htmlmin = require('html-minifier').minify
+const postcss = require('postcss')
+const sass = require('node-sass')
 
 /**
  * Compile HTML
  * @param  {string} css
  */
-var renderHtml = (css) => {
+const renderHtml = (css) => {
   const banner = fs.readFileSync('html/_banner.html').toString().trim()
 
   const html = fs.readFileSync('html/index.html')
@@ -33,7 +33,7 @@ var renderHtml = (css) => {
 const css = sass.renderSync({ file: 'scss/styles.scss' }).css.toString()
 
 postcss([
-  autoprefixer({ browsers: ['last 3 versions'], cascade: false }),
+  autoprefixer({ cascade: false }),
   cssnano
 ])
   .process(css)
