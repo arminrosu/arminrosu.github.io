@@ -3,6 +3,6 @@ module.exports = {
   '*': () => [
     'yarn prettier --loglevel silent --write .',
     'yarn build',
-    'git add index.html',
+    'git add .',
   ],
 }
