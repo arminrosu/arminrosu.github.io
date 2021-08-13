@@ -10,11 +10,6 @@ $color-background: #fff;
 $font-heading: Tahoma, Verdana, Segoe, sans-serif;
 $font-body: $font-heading;
 
-// Animation
-$glitch-count: infinite;
-$glitch-duration: 30s;
-$glitch-offset: 5s;
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // TAGS
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -39,38 +34,13 @@ p {
 }
 
 body {
-  animation: $glitch-duration linear $glitch-offset $glitch-count glitch;
+  // @TODO Move image into html, use flex columns
+  background: $color-background url(images/2016.07.jpg) fixed no-repeat 50% 50%;
+  background-size: contain;
   box-sizing: border-box;
   font-family: $font-body;
   font-size: 62.5%;
   padding: 30px;
-
-  &:before,
-  &:after {
-    background-blend-mode: darken;
-    bottom: 0;
-    content: '';
-    display: block;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 0;
-  }
-
-  &:before {
-    animation: $glitch-duration linear $glitch-offset $glitch-count
-      glitch-before;
-    background: url(images/2016.07.jpg) fixed no-repeat 50% 50%, #f0f;
-    background-size: contain;
-  }
-
-  &:after {
-    animation: $glitch-duration linear $glitch-offset $glitch-count glitch-after;
-    background: url(images/2016.07.jpg) fixed no-repeat 50% 50%, #0f0;
-    background-size: contain;
-    mix-blend-mode: lighten;
-  }
 }
 
 h1,
@@ -117,39 +87,5 @@ a {
 
   &:hover {
     border-bottom-style: solid;
-  }
-}
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// ANIMATION
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-@keyframes glitch {
-  0% {
-    text-shadow: 10px 0 #f0f, -5px 0 #0f0;
-  }
-
-  0.15% {
-    text-shadow: 0 0 #f0f, 0 0 #0f0;
-  }
-}
-
-@keyframes glitch-before {
-  0% {
-    transform: translate(-10px, 0);
-  }
-
-  0.15% {
-    transform: translate(0, 0);
-  }
-}
-
-@keyframes glitch-after {
-  0% {
-    transform: translate(10px, 0);
-  }
-
-  0.15% {
-    transform: translate(0, 0);
   }
 }
