@@ -12,7 +12,8 @@ const sass = require('sass')
 const renderHtml = (css) => {
   const banner = fs.readFileSync('html/_banner.html').toString().trim()
 
-  const html = fs.readFileSync('html/index.html')
+  const html = fs
+    .readFileSync('html/index.html')
     .toString()
     .replace('<style />', '<style>' + css + '</style>')
 
@@ -22,7 +23,7 @@ const renderHtml = (css) => {
     minifyJS: true,
     removeComments: true,
     removeEmptyAttributes: true,
-    removeRedundantAttributes: true
+    removeRedundantAttributes: true,
   })
 
   fs.writeFileSync('index.html', banner + minHtml)
@@ -32,10 +33,7 @@ const renderHtml = (css) => {
 
 const css = sass.renderSync({ file: 'scss/styles.scss' }).css.toString()
 
-postcss([
-  autoprefixer({ cascade: false }),
-  cssnano
-])
+postcss([autoprefixer({ cascade: false }), cssnano])
   .process(css)
   .then((result) => {
     renderHtml(result.css)

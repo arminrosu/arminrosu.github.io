@@ -59,7 +59,8 @@ body {
   }
 
   &:before {
-    animation: $glitch-duration linear $glitch-offset $glitch-count glitch-before;
+    animation: $glitch-duration linear $glitch-offset $glitch-count
+      glitch-before;
     background: url(images/2016.07.jpg) fixed no-repeat 50% 50%, #f0f;
     background-size: contain;
   }
