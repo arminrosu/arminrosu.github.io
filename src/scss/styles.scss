@@ -55,7 +55,12 @@ h1 {
 p {
   font-size: 1.6em;
   line-height: 180%;
+  margin-bottom: 2em;
   text-align: left;
+
+  &:last-child {
+    padding-bottom: 2em;
+  }
 }
 
 img {
