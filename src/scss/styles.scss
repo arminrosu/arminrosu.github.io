@@ -7,7 +7,8 @@ $color-main: #000;
 $color-background: #fff;
 
 // Typography
-$font-heading: Tahoma, Verdana, Segoe, sans-serif;
+$font-heading: 'Courier New', Courier, 'Lucida Sans Typewriter',
+  'Lucida Typewriter', monospace;
 $font-body: monaco, Consolas, 'Lucida Console', monospace;
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -16,6 +17,7 @@ $font-body: monaco, Consolas, 'Lucida Console', monospace;
 
 html,
 body {
+  background-color: $color-background;
   height: 100%;
   width: 100%;
 }
@@ -25,7 +27,6 @@ html {
 }
 
 // Reset
-body,
 div,
 h1,
 p {
@@ -34,48 +35,33 @@ p {
 }
 
 body {
-  // @TODO Move image into html, use flex columns
-  background: $color-background url(images/2016.07.jpg) fixed no-repeat 50% 50%;
-  background-size: contain;
   box-sizing: border-box;
   font-family: $font-body;
   font-size: 62.5%;
+  margin: 0 auto;
+  max-width: 50em;
   padding: 30px;
-}
-
-h1,
-p {
-  position: relative;
-  z-index: 1;
 }
 
 h1 {
   color: $color-main;
-  font: 600 4.8em $font-heading;
+  font-family: $font-heading;
+  font-size: 4.8em;
+  font-weight: 600;
   padding: 0 0 4%;
   text-align: center;
-  text-transform: uppercase;
 }
 
 p {
-  @media only screen and (orientation: landscape) {
-    max-width: 360px;
-    text-align: right;
-  }
-  clear: both;
-  float: right;
   font-size: 1.6em;
   line-height: 180%;
-  margin: 0 0 2em;
-
-  &:last-of-type {
-    margin: 0;
-  }
+  text-align: left;
 }
 
-span {
-  background: $color-background;
-  box-shadow: 2px 1px 0 1px $color-background, -2px 1px 0 1px $color-background;
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
 }
 
 a {
