@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Armin Roșu | Your friendly neighbourhood web dev</title>
+    <title>Armin Roșu | Your friendly neighbourhood dev</title>
     <meta
       name="description"
       content="Hi, I'm a developer, I build stuff, since 2004. I love what I do and hope you do to."
@@ -36,22 +36,18 @@
       sizes="16x16"
     />
 
-    <script type="text/javascript">
-      var _gaq = _gaq || []
-      _gaq.push(['_setAccount', 'UA-25617369-1'])
-      _gaq.push(['_setDomainName', 'armin.ro'])
-      _gaq.push(['_trackPageview'])
-      ;(function () {
-        var ga = document.createElement('script')
-        ga.type = 'text/javascript'
-        ga.async = true
-        ga.src =
-          ('https:' == document.location.protocol
-            ? 'https://ssl'
-            : 'http://www') + '.google-analytics.com/ga.js'
-        var s = document.getElementsByTagName('script')[0]
-        s.parentNode.insertBefore(ga, s)
-      })()
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-4FSF20D0MT"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+
+      gtag('config', 'G-4FSF20D0MT')
     </script>
   </head>
   <body>
