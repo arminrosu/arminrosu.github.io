@@ -1,9 +1,6 @@
 {
-  "plugins": [
-    "stylelint-no-indistinguishable-colors",
-    "stylelint-order",
-    "stylelint-selector-no-empty"
-  ],
+  "plugins": ["stylelint-order", "stylelint-selector-no-empty"],
+  "extends": ["stylelint-config-standard-scss"],
   "rules": {
     "block-closing-brace-newline-before": "always",
     "block-opening-brace-newline-after": "always",
@@ -21,7 +18,6 @@
     "no-extra-semicolons": true,
     "number-leading-zero": "always",
     "order/properties-alphabetical-order": true,
-    "plugin/stylelint-no-indistinguishable-colors": true,
     "plugin/stylelint-selector-no-empty": true,
     "property-no-vendor-prefix": true,
     "shorthand-property-no-redundant-values": true,
