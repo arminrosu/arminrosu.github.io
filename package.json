@@ -9,12 +9,17 @@
   },
   "license": "MIT",
   "author": "Armin Roșu",
+  "type": "module",
+  "exports": "src/build.js",
   "scripts": {
-    "build": "node scripts/build.js",
+    "build": "node src/build.js",
     "lint:js": "standard",
     "lint:styles": "stylelint **/*.scss",
     "release": "release-it",
     "test": "yarn lint:js && yarn lint:styles"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
   },
   "browserslist": [
     "last 2 versions",
@@ -39,6 +44,9 @@
     "stylelint-selector-no-empty": "1.0.9"
   },
   "packageManager": "yarn@3.2.3",
+  "engines": {
+    "node": ">= 16.0.0"
+  },
   "release-it": {
     "github": {
       "release": true
@@ -46,8 +54,5 @@
     "npm": {
       "publish": false
     }
-  },
-  "simple-git-hooks": {
-    "pre-commit": "npx lint-staged"
   }
 }

@@ -346,6 +346,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:16.11.62":
+  version: 16.11.62
+  resolution: "@types/node@npm:16.11.62"
+  checksum: 7086105ded0005a9dc80688250c3d6a8aa01a2bcee3e3934fd3f731786b0e9e47a47fb72be7bfa96f3266bdb14aa9713931ea108d3445a99e35ea127b2d2346e
+  languageName: node
+  linkType: hard
+
 "@types/normalize-package-data@npm:^2.4.0":
   version: 2.4.0
   resolution: "@types/normalize-package-data@npm:2.4.0"
