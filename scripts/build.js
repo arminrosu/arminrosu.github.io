@@ -42,7 +42,9 @@ const css = sass
   .css.toString()
 
 postcss([autoprefixer({ cascade: false }), cssnano])
-  .process(css)
+  .process(css, {
+    from: undefined,
+  })
   .then((result) => {
     renderHtml(result.css)
   })
