@@ -24,13 +24,13 @@
     "not dead",
     "not IE 11"
   ],
-  "devDependencies": {
-    "@types/node": "16.11.62",
+  "dependencies": {
     "autoprefixer": "10.4.12",
     "cssnano": "5.1.13",
     "html-minifier": "4.0.0",
     "postcss": "8.4.17",
     "prettier": "2.7.1",
+    "prettier-plugin-packagejson": "2.3.0",
     "release-it": "15.4.3",
     "sass": "1.55.0",
     "standard": "17.0.0",
@@ -38,6 +38,9 @@
     "stylelint-config-standard-scss": "5.0.0",
     "stylelint-order": "5.0.0",
     "stylelint-selector-no-empty": "1.0.9"
+  },
+  "devDependencies": {
+    "@types/node": "16.11.62"
   },
   "packageManager": "yarn@3.2.3",
   "engines": {

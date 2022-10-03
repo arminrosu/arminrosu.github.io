@@ -2,6 +2,7 @@
 
 module.exports = {
   arrowParens: 'always',
+  plugins: [require.resolve('prettier-plugin-packagejson')],
   printWidth: 80,
   semi: false,
   singleQuote: true,
