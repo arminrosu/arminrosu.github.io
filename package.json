@@ -13,13 +13,11 @@
   "exports": "src/build.js",
   "scripts": {
     "build": "node src/build.js",
+    "format": "yarn lint:js --fix && yarn lint:styles --fix && yarn prettier --loglevel silent --write .",
     "lint:js": "standard",
     "lint:styles": "stylelint **/*.scss",
     "release": "release-it",
     "test": "yarn lint:js && yarn lint:styles"
-  },
-  "simple-git-hooks": {
-    "pre-commit": "npx lint-staged"
   },
   "browserslist": [
     "last 2 versions",
@@ -31,12 +29,10 @@
     "autoprefixer": "10.4.12",
     "cssnano": "5.1.13",
     "html-minifier": "4.0.0",
-    "lint-staged": "13.0.3",
     "postcss": "8.4.17",
     "prettier": "2.7.1",
     "release-it": "15.4.3",
     "sass": "1.55.0",
-    "simple-git-hooks": "2.8.0",
     "standard": "17.0.0",
     "stylelint": "14.13.0",
     "stylelint-config-standard-scss": "5.0.0",
